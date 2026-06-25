@@ -1,0 +1,27 @@
+class Vehiculo:
+    def mover(self):
+        raise NotImplementedError("Este método debe ser sobrescrito por las subclases")
+
+class Coche(Vehiculo):
+    def mover(self):
+        return "El coche se mueve usando un motor."
+
+class Bicicleta(Vehiculo):
+    def mover(self):
+        return "La bicicleta se mueve pedaleando."
+
+def mostrar_movimientos(vehiculos):
+    for vehiculo in vehiculos:
+        print(f"{vehiculo.__class__.__name__}: {vehiculo.mover()}")
+
+def main():
+    vehiculos = [
+        Coche(),
+        Bicicleta(),
+        Coche()
+    ]
+
+    mostrar_movimientos(vehiculos)
+
+if __name__ == "__main__":
+    main()
